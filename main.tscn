@@ -1,0 +1,24 @@
+[gd_scene load_steps=3 format=3 uid="uid://d136ubc3tgv4y"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_uy7sp"]
+size = Vector2(1169, 18)
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_wivmq"]
+radius = 17.0
+height = 60.0
+
+[node name="Main" type="Node2D"]
+
+[node name="Floor" type="StaticBody2D" parent="."]
+position = Vector2(580, 641)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Floor"]
+shape = SubResource("RectangleShape2D_uy7sp")
+
+[node name="Player" type="CharacterBody2D" parent="."]
+position = Vector2(174, 300)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Player"]
+shape = SubResource("CapsuleShape2D_wivmq")
+
+[node name="Sprite2D" type="Sprite2D" parent="Player"]
